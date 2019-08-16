@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { UserPage } from './user.page';
+import {ShopDetailsModule} from '../shop_details/shop_details.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        ShopDetailsModule,
         IonicModule,
         RouterModule.forChild([
             {
