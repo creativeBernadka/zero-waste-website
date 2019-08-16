@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Zero Waste
+        </ion-title>
+        <ion-buttons slot="secondary">
+            <ion-button routerDirection="forward">
+                <ion-icon name="settings"></ion-icon>
+            </ion-button>
+            <ion-button routerDirection="forward">Wyloguj</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 
-</body>
-</html>
+<ion-content>
+    <div id="shops_list">
+        <ion-item *ngFor="let shop of shops" lines="inset">
+            <ion-label color="medium">{{shop.name}}</ion-label>
+        </ion-item>
+    </div>
+
+    <div id="shop_details">
+    </div>
+
+</ion-content>

@@ -1,0 +1,20 @@
+#shops_list{
+  float:left;
+  width:30%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+#shop_details{
+  float:left;
+  width:70%;
+}
+
+ion-content{
+  --background: #fff url("../../assets/background/shop_details.jpg") no-repeat center center / cover;
+}
+
+ion-item{
+  margin: 3px;
+  border-radius: 5px;
+}
