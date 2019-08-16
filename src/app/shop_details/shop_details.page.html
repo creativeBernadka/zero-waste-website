@@ -1,3 +1,67 @@
 <ion-content>
-    <ion-button>sdjkaskjf</ion-button>
+
+    <ion-item>
+        <ion-label position="floating">Nazwa</ion-label>
+        <ion-input placeholder="Podaj nazwę" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-list>
+        <ion-item>
+            <ion-label position="floating">Rodzaj miejsca</ion-label>
+            <ion-select cancelText="Anuluj" okText="Zatwierdź" [(ngModel)]="type">
+                <ion-select-option value="shop">Sklep</ion-select-option>
+                <ion-select-option value="restaurant">Restauracja</ion-select-option>
+                <ion-select-option value="repair_point">Punkt naprawczy</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <ion-item id="description">
+        <ion-label position="floating">Opis</ion-label>
+        <ion-textarea
+                placeholder="Podaj krótki opis..."
+                autoGrow="true"
+                [(ngModel)]="description"
+        ></ion-textarea>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col></ion-col>
+            <ion-col>Godzina otwarcia</ion-col>
+            <ion-col>Godzina zamknięcia</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let day of daysOfWeek">
+            <ion-col>
+                {{day}}
+            </ion-col>
+            <ion-col>
+                <ion-datetime
+                        displayFormat="HH:mm"
+                        placeholder="Godzina otwarcia"
+                        value="08:00"></ion-datetime>
+            </ion-col>
+            <ion-col>
+                <ion-datetime
+                        displayFormat="HH:mm"
+                        placeholder="Godzina zamknięcia"
+                        value="16:00"></ion-datetime>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item>
+        <ion-label position="floating">Numer telefonu</ion-label>
+        <ion-input placeholder="Podaj numer telefonu" [(ngModel)]="phoneNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Adres strony internetowej</ion-label>
+        <ion-input placeholder="Podaj adres strony internetowej" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-row right>
+        <ion-col text-right>
+            <ion-button size="large">Zatwierdź</ion-button>
+        </ion-col>
+    </ion-row>
 </ion-content>
