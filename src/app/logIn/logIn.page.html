@@ -14,14 +14,14 @@
 
     <div>
         <ion-item>
-            <ion-input placeholder="Login"></ion-input>
+            <ion-input placeholder="Login" [(ngModel)]="login"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-input placeholder="Hasło" type="password"></ion-input>
+            <ion-input placeholder="Hasło" type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
-        <ion-button>
+        <ion-button (click)="verifyCredentials()">
             Zaloguj
         </ion-button>
 
