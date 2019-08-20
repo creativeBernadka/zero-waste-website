@@ -1,4 +1,4 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import * as moment from 'moment';
 import {tap} from 'rxjs/operators';
@@ -9,13 +9,15 @@ export class AuthService {
     constructor(private http: HttpClient) {
     }
 
-    login(email: string, password: string ) {
-        return this.http.post('/api/login', {email, password})
+    baseUrl = 'https://zero-waste-database.herokuapp.com';
+
+    login(username: string, password: string ) {
+        return this.http.post(this.baseUrl + '/auth', {username, password})
             .pipe(
                 tap(
                     res => {
                         this.setSession(res);
-                        console.log(res);
+                        console.log('RESPONSE', res);
                     },
                     error => console.log(error)
                 )
